@@ -2,8 +2,8 @@
 export function ModuloFirstFindN(x:number[]):number[]{
    let n = x[0];
 
-   for (let value of x){
-        value = value % n
+   for (let i = 0; i < x.length; i++){
+        x[i] = x[i] % n
    }
 
    return x;
