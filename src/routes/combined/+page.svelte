@@ -1,21 +1,11 @@
-
+<!-- src/routes/combined/+page.svelte -->
 <script lang="ts">
-import {cubes} from '$lib/filters';
-let raw = '1 3 5 7 9 999';
+import { combinedFilter } from '$lib/combined/combined';
+let raw = '1 3 5 7 9';
 $: input = raw.trim().split(/\s+/).filter(Boolean).map(Number);
-$: output = cubes(input);
+$: output = combinedFilter(input);
 </script>
 
-<h1>SEQUENCE FILTER DEMO</h1>
-<label>
-    Input (space-separated integers)
-    <input bind:value={raw} placeholder="e.g., 4 3 2 1 0" />
-</label>
-
-<h2>Output</h2>
-<p>{output.join(' ')}</p>
-
-<style>
-label {display: block; margin: 1rem 0;}
-input {width: 100%; max-width: 30rem;}
-</style>
+<h1>Combined (peer → mine)</h1>
+<label>Input <input bind:value={raw} /></label>
+<p>Output: {output.join(' ')}</p>
