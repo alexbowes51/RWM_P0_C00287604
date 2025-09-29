@@ -1,0 +1,1 @@
+-I made my decisions base on the merge to to get the closet result to the target file and to fix the conflit
